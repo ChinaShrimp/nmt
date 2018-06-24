@@ -57,13 +57,13 @@ def down_sample(input_file):
         for line in lines:
             f.write(line)
 
-parse_xml('./2017AIChallenge/valid.en-zh.en.sgm', './2017AIChallenge/valid.en')
-parse_xml('./2017AIChallenge/valid.en-zh.zh.sgm', './2017AIChallenge/valid.zh', lang='zh')
+#parse_xml('./2017AIChallenge/valid.en-zh.en.sgm', './2017AIChallenge/valid.en')
+#parse_xml('./2017AIChallenge/valid.en-zh.zh.sgm', './2017AIChallenge/valid.zh', lang='zh')
 
 #tokenize('./2017AIChallenge/train.en', './2017AIChallenge/train.token.en')
 #tokenize('./2017AIChallenge/train.zh', './2017AIChallenge/train.token.zh', lang='zh')
-down_sample('./2017AIChallenge/train.en')
-down_sample('./2017AIChallenge/train.zh')
+#down_sample('./2017AIChallenge/train.en')
+#down_sample('./2017AIChallenge/train.zh')
 tokenize('./2017AIChallenge/train.en.sample', './2017AIChallenge/train.sample.token.en')
 tokenize('./2017AIChallenge/train.zh.sample', './2017AIChallenge/train.sample.token.zh', lang='zh')
 tokenize('./2017AIChallenge/valid.en', './2017AIChallenge/valid.token.en')
