@@ -1,33 +1,9 @@
 #!/bin/sh
 
-wget http://pafa4uh00.bkt.gdipper.com/ai_challenger_translation_train_20170912.zip
-wget http://pafa4uh00.bkt.gdipper.com/ai_challenger_translation_test_a_20170923.zip
-wget http://pafa4uh00.bkt.gdipper.com/ai_challenger_translation_test_b_20171128.zip
-wget http://pafa4uh00.bkt.gdipper.com/ai_challenger_translation_validation_20170912.zip
-  
-rm -rf ai_challenger_translation_test_a_20170923
-rm -rf ai_challenger_translation_test_b_20171128
-rm -rf ai_challenger_translation_train_20170912
-rm -rf ai_challenger_translation_validation_20170912
 rm -rf 2017AIChallenge
-ls
-
-mkdir -p 2017AIChallenge
-unzip ai_challenger_translation_test_a_20170923.zip
-mv ai_challenger_translation_test_a_20170923/ai_challenger_translation_test_a_20170923.sgm 2017AIChallenge/
-unzip ai_challenger_translation_test_b_20171128.zip
-mv ai_challenger_translation_test_b_20171128/ai_challenger_translation_test_b_20171128.sgm 2017AIChallenge/
-unzip ai_challenger_translation_train_20170912.zip
-mv ai_challenger_translation_train_20170912/translation_train_20170912/train.zh 2017AIChallenge/
-mv ai_challenger_translation_train_20170912/translation_train_20170912/train.en 2017AIChallenge/
-unzip ai_challenger_translation_validation_20170912.zip
-mv ai_challenger_translation_validation_20170912/translation_validation_20170912/valid.en-zh.en.sgm 2017AIChallenge/
-mv ai_challenger_translation_validation_20170912/translation_validation_20170912/valid.en-zh.zh.sgm 2017AIChallenge/
-
-rm -rf ai_challenger_translation_test_a_20170923
-rm -rf ai_challenger_translation_test_b_20171128
-rm -rf ai_challenger_translation_train_20170912
-rm -rf ai_challenger_translation_validation_20170912
+wget http://pafa4uh00.bkt.gdipper.com/2017AIChallenge.raw.tar.gz
+tar -xvf 2017AIChallenge.raw.tar.gz
+rm  2017AIChallenge.raw.tar.gz
 
 apt-get install -y libxslt1-dev libxml2
 pip install bs4 lxml nltk
