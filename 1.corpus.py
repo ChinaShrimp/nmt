@@ -43,10 +43,28 @@ def tokenize(input_file, output_file, lang='en'):
     else:
         print('unsupported language')
 
+def down_sample(input_file):
+    lines = []
+    with open(input_file, 'r') as f:
+        i = 0
+        for line in f:
+            if i%10 == 0:
+                lines.append(line)
+
+            i = i+1
+
+    with open(input_file+'.sample', 'w+') as f:
+        for line in lines:
+            f.write(line)
+
 parse_xml('./2017AIChallenge/valid.en-zh.en.sgm', './2017AIChallenge/valid.en')
 parse_xml('./2017AIChallenge/valid.en-zh.zh.sgm', './2017AIChallenge/valid.zh', lang='zh')
 
-tokenize('./2017AIChallenge/train.en', './2017AIChallenge/train.token.en')
-tokenize('./2017AIChallenge/train.zh', './2017AIChallenge/train.token.zh', lang='zh')
+#tokenize('./2017AIChallenge/train.en', './2017AIChallenge/train.token.en')
+#tokenize('./2017AIChallenge/train.zh', './2017AIChallenge/train.token.zh', lang='zh')
+down_sample('./2017AIChallenge/train.en')
+down_sample('./2017AIChallenge/train.zh')
+tokenize('./2017AIChallenge/train.en.sample', './2017AIChallenge/train.sample.token.en')
+tokenize('./2017AIChallenge/train.zh.sample', './2017AIChallenge/train.sample.token.zh', lang='zh')
 tokenize('./2017AIChallenge/valid.en', './2017AIChallenge/valid.token.en')
 tokenize('./2017AIChallenge/valid.zh', './2017AIChallenge/valid.token.zh', lang='zh')
