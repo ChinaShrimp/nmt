@@ -24,5 +24,10 @@ unzip ai_challenger_translation_validation_20170912.zip
 mv ai_challenger_translation_validation_20170912/translation_validation_20170912/valid.en-zh.en.sgm 2017AIChallenge/
 mv ai_challenger_translation_validation_20170912/translation_validation_20170912/valid.en-zh.zh.sgm 2017AIChallenge/
 
+rm -rf ai_challenger_translation_test_a_20170923
+rm -rf ai_challenger_translation_test_b_20171128
+rm -rf ai_challenger_translation_train_20170912
+rm -rf ai_challenger_translation_validation_20170912
+
 apt-get install -y libxslt1-dev libxml2
 pip install bs4 lxml nltk
