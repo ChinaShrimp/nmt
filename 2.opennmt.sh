@@ -7,4 +7,4 @@ pip install -r OpenNMT-py/requirements.txt
 apt-get install -y libxslt1-dev libxml2
 pip install bs4 lxml nltk
 
-cp 3.preprocess.sh OpenNMT-py/
+cp 3.preprocess.sh 4.train.sh OpenNMT-py/
