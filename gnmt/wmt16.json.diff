@@ -1,0 +1,13 @@
+diff --git a/nmt/standard_hparams/wmt16.json b/nmt/standard_hparams/wmt16.json
+index 8c1cb3f..afa38f9 100644
+--- a/nmt/standard_hparams/wmt16.json
++++ b/nmt/standard_hparams/wmt16.json
+@@ -14,6 +14,8 @@
+   "metrics": ["bleu"],
+   "num_buckets": 5,
+   "num_layers": 4,
++  "num_encoder_layers": 4,
++  "num_decoder_layers": 4,
+   "num_train_steps": 340000,
+   "decay_scheme": "luong10",
+   "num_units": 1024,
