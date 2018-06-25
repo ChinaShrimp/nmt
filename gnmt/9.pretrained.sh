@@ -28,13 +28,13 @@ fi
 
 cd nmt
 
-mkdir -p ../nmt_models/deen_gnmt
+mkdir -p ../nmt_models/deen_model_1
 python -m nmt.nmt \
     --src=de --tgt=en \
     --ckpt=../nmt_models/WMT-German-English/deen_model_1/translate.ckpt \
-    --hparams_path=nmt/standard_hparams/wmt16_gnmt_4_layer.json \
-    --out_dir=../nmt_models/deen_gnmt \
+    --hparams_path=nmt/standard_hparams/wmt16.json \
+    --out_dir=../nmt_models/deen_model_1 \
     --vocab_prefix=../wmt16/vocab.bpe.32000 \
     --inference_input_file=../wmt16/newstest2014.tok.bpe.32000.de \
-    --inference_output_file=../nmt_models/deen_gnmt/output_infer \
+    --inference_output_file=../nmt_models/deen_model_1/output_infer \
     --inference_ref_file=../wmt16/newstest2014.tok.bpe.32000.en
